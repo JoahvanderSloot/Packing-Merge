@@ -1,20 +1,25 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
-using static UnityEngine.InputSystem.InputAction;
 
 public class Player : MonoBehaviour
 {
     [SerializeField] InputActionReference tapAction;
     [SerializeField] InputActionReference positionAction;
-    [SerializeField] GameObject ballPrefab;
     [SerializeField] float startYpos;
 
+    GameManager gameManager;
     GameObject currentBall;
     GameObject currentLine;
     bool isDragging = false;
     bool canDrag = true;
     bool isSpawning = false;
+
+    private void Start()
+    {
+        gameManager = FindFirstObjectByType<GameManager>();
+        StartCoroutine(SpawnNewBall());
+    }
 
     private void OnEnable()
     {
@@ -22,8 +27,6 @@ public class Player : MonoBehaviour
         tapAction.action.canceled += OnRelease;
         tapAction.action.Enable();
         positionAction.action.Enable();
-
-        StartCoroutine(SpawnNewBall());
     }
 
     private void OnDisable()
@@ -34,7 +37,7 @@ public class Player : MonoBehaviour
         positionAction.action.Disable();
     }
 
-    private void OnTap(CallbackContext _context)
+    private void OnTap(InputAction.CallbackContext _context)
     {
         if (!canDrag || currentBall == null) return;
 
@@ -45,7 +48,7 @@ public class Player : MonoBehaviour
         isDragging = true;
     }
 
-    private void OnRelease(CallbackContext _context)
+    private void OnRelease(InputAction.CallbackContext _context)
     {
         if (currentBall == null || isSpawning) return;
 
@@ -63,13 +66,16 @@ public class Player : MonoBehaviour
         isSpawning = true;
         yield return new WaitForSeconds(0.2f);
 
-        currentBall = Instantiate(ballPrefab, new Vector3(0f, startYpos, 0f), Quaternion.identity);
+        GameObject _nextDropPrefab = gameManager.GetNextDrop();
+        currentBall = Instantiate(_nextDropPrefab, new Vector3(0f, startYpos, 0f), Quaternion.identity);
         currentBall.GetComponent<BoxCollider2D>().isTrigger = true;
         currentLine = currentBall.transform.GetChild(0).gameObject;
         currentLine.SetActive(false);
 
         canDrag = true;
         isSpawning = false;
+
+        gameManager.UpdateNextDrop();
     }
 
     private void Update()
@@ -81,7 +87,7 @@ public class Player : MonoBehaviour
 
             currentBall.transform.position = new Vector3(_worldPos.x, startYpos, 0f);
 
-            if(currentLine != null)
+            if (currentLine != null)
             {
                 currentLine.SetActive(true);
             }
