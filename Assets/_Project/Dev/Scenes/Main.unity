@@ -1356,7 +1356,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: -30}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1117334890
@@ -1394,7 +1394,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 700, y: 1000}
+  m_SizeDelta: {x: 800, y: 1000}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1117334892
 MonoBehaviour:
@@ -1416,7 +1416,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 897710771807637462, guid: e1a259d0ed810c2418c35435eb72af0b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1855,11 +1855,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5248722438999279100, guid: e0a8824982f323945b3e89101fdb8201, type: 3}
       propertyPath: scoreSpawn
-      value: 20
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 5248722438999279100, guid: e0a8824982f323945b3e89101fdb8201, type: 3}
       propertyPath: peanutDropSpeed
-      value: 3
+      value: 0.75
       objectReference: {fileID: 0}
     - target: {fileID: 5248722438999279100, guid: e0a8824982f323945b3e89101fdb8201, type: 3}
       propertyPath: points.Array.size
@@ -2793,10 +2793,10 @@ MonoBehaviour:
   Settings: {fileID: 11400000, guid: 48b0a773072afa449b2270c16abac527, type: 2}
   nextDropDisplay: {fileID: 1356027844}
   dropPrefabs:
+  - {fileID: 7326690929729804124, guid: f590d957ae9a5454f8115a05395be33b, type: 3}
   - {fileID: 7326690929729804124, guid: bde77168776fb9340a3547614118487a, type: 3}
   - {fileID: 7326690929729804124, guid: fc653ea4c940a3a46a155ab3cf600ec5, type: 3}
   - {fileID: 7326690929729804124, guid: 2321440e93201a14f891850f30c13c69, type: 3}
-  - {fileID: 7326690929729804124, guid: 46a16d5ba6bdde44e8c844a171488204, type: 3}
   player: {fileID: 175766279}
   GameOverMenu: {fileID: 1112760271}
   scoreText: {fileID: 323429775}
