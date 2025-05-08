@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject nextDropDisplay;
     [SerializeField] GameObject[] dropPrefabs;
     [SerializeField] Player player;
-    [SerializeField] GameObject GameOverMenu;
+    public GameObject GameOverMenu;
 
     [SerializeField] TextMeshProUGUI scoreText;
 
@@ -19,6 +19,7 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        GameOverMenu.SetActive(false);
         ChooseRandomDrop();
     }
 
@@ -59,9 +60,19 @@ public class GameManager : MonoBehaviour
         SceneManager.LoadScene("Start");
     }
 
-    public IEnumerator GameOver()
+    public void Restart()
     {
-        yield return new WaitForSeconds(1f);
-        Time.timeScale = 0f;
+        SceneManager.LoadScene("Main");
+    }
+
+    public void GameOver()
+    {
+        GameOverMenu.SetActive(true);
+
+        if (GameSettings.Score > GameSettings.HighScore)
+        {
+            GameSettings.HighScore = GameSettings.Score;
+        }
+        GameSettings.Score = 0;
     }
 }

@@ -9,7 +9,7 @@ public class UiManager : MonoBehaviour
 
     void Start()
     {
-        highScoreText.text = "High Score: " + gameSettings.HighScore.ToString();
+        highScoreText.text = "High Score:\n" + gameSettings.HighScore.ToString();
     }
 
     void Update()

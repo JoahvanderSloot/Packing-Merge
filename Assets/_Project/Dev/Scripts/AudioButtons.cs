@@ -49,7 +49,7 @@ public class AudioButtons : MonoBehaviour
             }
             else
             {
-                AudioManager.m_Instance.StopAllSounds();
+                //AudioManager.m_Instance.StopAllSounds();
             }
 
             //AudioManager.m_Instance.Play("Click");
