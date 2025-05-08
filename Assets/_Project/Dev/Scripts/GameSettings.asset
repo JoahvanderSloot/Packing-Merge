@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: GameSettings
   m_EditorClassIdentifier: 
   HighScore: 120
-  Score: 40
+  Score: 0
   Audio: 0
   Music: 0
