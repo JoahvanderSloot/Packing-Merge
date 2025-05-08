@@ -859,7 +859,7 @@ Transform:
   m_GameObject: {fileID: 366602692}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 6, z: 0}
+  m_LocalPosition: {x: 0, y: 3.5, z: 0}
   m_LocalScale: {x: 8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -938,7 +938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   executeInUpdate: 1
   anchorType: 1
-  anchorOffset: {x: 0, y: 11, z: 0}
+  anchorOffset: {x: 0, y: 9, z: 0}
 --- !u!1 &632792671
 GameObject:
   m_ObjectHideFlags: 0
@@ -1225,7 +1225,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1093913163137968991, guid: 08adf586da2ac8544bdf861a412bc249, type: 3}
+  m_Sprite: {fileID: -6973345960376357409, guid: f82cc165fe4f1a74bad147a030871999, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1306,7 +1306,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 5.5
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -1394,7 +1394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   wireColor: {r: 1, g: 1, b: 1, a: 1}
-  UnitsSize: 10
+  UnitsSize: 11
   constraint: 1
   camera: {fileID: 1025754534}
   executeInUpdate: 1
@@ -2570,7 +2570,7 @@ Transform:
   m_GameObject: {fileID: 1807537784}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0.02, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -2592,7 +2592,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   executeInUpdate: 1
   anchorType: 1
-  anchorOffset: {x: 0, y: 5, z: 0}
+  anchorOffset: {x: 0.02, y: 5, z: 0}
 --- !u!1 &2017181582
 GameObject:
   m_ObjectHideFlags: 0
@@ -2722,7 +2722,7 @@ Transform:
   m_GameObject: {fileID: 2039974924}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -5, z: 0}
+  m_LocalPosition: {x: 0, y: -5.5, z: 0}
   m_LocalScale: {x: 8, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:

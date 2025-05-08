@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8bbb1d100ff9d3248b3b5ed0c833df54, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  HighScore: 120
+  HighScore: 0
   Score: 0
-  Audio: 0
-  Music: 0
+  Audio: 1
+  Music: 1
