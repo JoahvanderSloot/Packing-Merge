@@ -40,6 +40,7 @@ public class ObjectManager : MonoBehaviour
 
         Destroy(gameObject);
         Destroy(collision.gameObject);
+        AudioManager.Instance.Play("Merge");
 
         if (ObjectTypeIndex == itemPrefs.Count - 1)
         {
@@ -63,6 +64,6 @@ public class ObjectManager : MonoBehaviour
             _newBall.GetComponent<Rigidbody2D>().gravityScale = 1f;
         }
         GameManager _gameManager = FindFirstObjectByType<GameManager>();
-        _gameManager.GameSettings.Score += givesScore;
+        _gameManager.Settings.Score += givesScore;
     }
 }

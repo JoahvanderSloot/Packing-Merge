@@ -64,6 +64,7 @@ public class Player : MonoBehaviour
 
         isDragging = false;
         canDrag = false;
+        AudioManager.Instance.Play("Drop");
         currentBall.GetComponent<Rigidbody2D>().gravityScale = 1f;
         currentBall.GetComponent<PolygonCollider2D>().isTrigger = false;
         currentBall = null;

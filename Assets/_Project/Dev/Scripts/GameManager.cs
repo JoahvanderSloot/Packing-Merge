@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
-    public GameSettings GameSettings;
+    public GameSettings Settings;
 
     [SerializeField] GameObject nextDropDisplay;
     [SerializeField] GameObject[] dropPrefabs;
@@ -19,13 +19,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.Instance.Play("GameMusic");
+        Settings.Score = 0;
         GameOverMenu.SetActive(false);
         ChooseRandomDrop();
     }
 
     private void Update()
     {
-        scoreText.text = "Score:\n" + GameSettings.Score.ToString();
+        scoreText.text = "Score:\n" + Settings.Score.ToString();
     }
 
     private void ChooseRandomDrop()
@@ -52,27 +54,30 @@ public class GameManager : MonoBehaviour
 
     public void HomeButton()
     {
-        if(GameSettings.Score > GameSettings.HighScore)
+        AudioManager.Instance.Play("Click");
+        if (Settings.Score > Settings.HighScore)
         {
-            GameSettings.HighScore = GameSettings.Score;
+            Settings.HighScore = Settings.Score;
         }
-        GameSettings.Score = 0;
+        Settings.Score = 0;
         SceneManager.LoadScene("Start");
     }
 
     public void Restart()
     {
+        AudioManager.Instance.Play("Click");
         SceneManager.LoadScene("Main");
     }
 
     public void GameOver()
     {
+        AudioManager.Instance.Play("Lose");
         GameOverMenu.SetActive(true);
 
-        if (GameSettings.Score > GameSettings.HighScore)
+        if (Settings.Score > Settings.HighScore)
         {
-            GameSettings.HighScore = GameSettings.Score;
+            Settings.HighScore = Settings.Score;
         }
-        GameSettings.Score = 0;
+        Settings.Score = 0;
     }
 }

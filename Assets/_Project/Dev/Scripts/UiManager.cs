@@ -9,12 +9,13 @@ public class UiManager : MonoBehaviour
 
     void Start()
     {
+        AudioManager.Instance.StopAllCoroutines();
         highScoreText.text = "High Score:\n" + gameSettings.HighScore.ToString();
     }
 
     public void StartGame()
     {
-        //AudioManager.m_Instance.Play("Click");
+        AudioManager.Instance.Play("Click");
         SceneManager.LoadScene("Main");
     }
 }

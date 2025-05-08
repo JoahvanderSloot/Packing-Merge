@@ -30,9 +30,17 @@ public class AudioButtons : MonoBehaviour
     {
         if (audioButton != null)
         {
-            //AudioManager.m_Instance.Play("Hover");
             gameSettings.Audio = !gameSettings.Audio;
             UpdateButtonSprite(audioButton, gameSettings.Audio);
+
+            if(gameSettings.Audio)
+            {
+                AudioManager.Instance.Play("Click");
+            }
+            else
+            {
+                AudioManager.Instance.Stop("Click");
+            }
         }
     }
 
@@ -43,16 +51,7 @@ public class AudioButtons : MonoBehaviour
             gameSettings.Music = !gameSettings.Music;
             UpdateButtonSprite(musicButton, gameSettings.Music);
 
-            if (gameSettings.Music)
-            {
-                //AudioManager.m_Instance.Play("MenuMusic");
-            }
-            else
-            {
-                //AudioManager.m_Instance.StopAllSounds();
-            }
-
-            //AudioManager.m_Instance.Play("Click");
+            AudioManager.Instance.Play("Click");
         }
     }
 

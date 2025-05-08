@@ -45,6 +45,8 @@ public class Gaylien : MonoBehaviour
     [SerializeField]
     private int scoreSpawn = 0;
 
+    bool saidHello = false;
+
     void Start()
     {
         gameManager = FindFirstObjectByType<GameManager>();
@@ -58,9 +60,10 @@ public class Gaylien : MonoBehaviour
 
     void Update()
     {
-        currentScore = gameManager.GameSettings.Score;
+        currentScore = gameManager.Settings.Score;
         if (currentScore >= scoreGoal)
         {
+
             scoreGoal += scoreSpawn;
             pointIndex = 0;
         }
@@ -93,13 +96,25 @@ public class Gaylien : MonoBehaviour
         desiredDirection = (points[pointIndex].position - transform.position).normalized;
         direction = Vector2.Lerp(direction, desiredDirection, turnSpeed * Time.deltaTime);
         transform.position += (Vector3)(direction * movespeed * Time.deltaTime);
+
+        if(pointIndex == 1 && !saidHello)
+        {
+            AudioManager.Instance.Play("Hello");
+            saidHello = true;
+        }
+        else if(pointIndex != 1 && saidHello)
+        {
+            saidHello = false;
+        }
     }
 
     IEnumerator DropPeanut()
     {
+        AudioManager.Instance.Play("Gaylien");
         while (true)
         {
             yield return new WaitForSeconds(peanutDropSpeed);
+            AudioManager.Instance.Play("Peanuts");
             GameObject peanut = Instantiate(peanutPrefab, DropPoint.position, Quaternion.identity);
             peanut.GetComponent<SpriteRenderer>().sprite = peanutSprites[
                 Random.Range(0, peanutSprites.Count)

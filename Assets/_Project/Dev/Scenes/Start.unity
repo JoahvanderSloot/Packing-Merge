@@ -1136,6 +1136,143 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1440460600}
   m_CullTransparentMesh: 1
+--- !u!1 &1607390352
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1607390353}
+  - component: {fileID: 1607390354}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1607390353
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607390352}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1607390354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607390352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eae4bf50b95c31549ba5a3443cca3307, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_MixerGroup: {fileID: 0}
+  m_Sounds:
+  - m_Name: Click
+    m_Clip: {fileID: 8300000, guid: 9f754b76b0d1a52408dd356f9bdea7c0, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0
+    m_Pitch: 1
+    m_PitchVariance: 0
+    m_Loop: 0
+    m_Music: 0
+    m_MixerGroup: {fileID: 0}
+    m_Source: {fileID: 0}
+  - m_Name: Drop
+    m_Clip: {fileID: 8300000, guid: ed429336dae7ece41a4c7b9f9f65c7b9, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0
+    m_Pitch: 1
+    m_PitchVariance: 0
+    m_Loop: 0
+    m_Music: 0
+    m_MixerGroup: {fileID: 0}
+    m_Source: {fileID: 0}
+  - m_Name: Merge
+    m_Clip: {fileID: 8300000, guid: 72c649d914cd93347b58c530dcc660d3, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0
+    m_Pitch: 1
+    m_PitchVariance: 0
+    m_Loop: 0
+    m_Music: 0
+    m_MixerGroup: {fileID: 0}
+    m_Source: {fileID: 0}
+  - m_Name: Lose
+    m_Clip: {fileID: 8300000, guid: 725e64879691b3345b45b6e3ac640a0c, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0
+    m_Pitch: 1
+    m_PitchVariance: 0
+    m_Loop: 0
+    m_Music: 0
+    m_MixerGroup: {fileID: 0}
+    m_Source: {fileID: 0}
+  - m_Name: Peanuts
+    m_Clip: {fileID: 8300000, guid: ef8da80a189b6e94fa2005f71cead9af, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0
+    m_Pitch: 1
+    m_PitchVariance: 0
+    m_Loop: 0
+    m_Music: 0
+    m_MixerGroup: {fileID: 0}
+    m_Source: {fileID: 0}
+  - m_Name: Hello
+    m_Clip: {fileID: 8300000, guid: 4f45c3e02fc3ec24386aa6815a981c1c, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0
+    m_Pitch: 1
+    m_PitchVariance: 0
+    m_Loop: 0
+    m_Music: 0
+    m_MixerGroup: {fileID: 0}
+    m_Source: {fileID: 0}
+  - m_Name: Duck
+    m_Clip: {fileID: 8300000, guid: 78e9d01115b88f24f908cebb3ac00ae5, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0
+    m_Pitch: 1
+    m_PitchVariance: 0
+    m_Loop: 0
+    m_Music: 0
+    m_MixerGroup: {fileID: 0}
+    m_Source: {fileID: 0}
+  - m_Name: Gaylien
+    m_Clip: {fileID: 8300000, guid: ec60032688c52784e9754013b8fb7989, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0
+    m_Pitch: 1
+    m_PitchVariance: 0
+    m_Loop: 0
+    m_Music: 0
+    m_MixerGroup: {fileID: 0}
+    m_Source: {fileID: 0}
+  - m_Name: GameMusic
+    m_Clip: {fileID: 8300000, guid: 2d34cd6e6b1a0734ebafdc25090831a4, type: 3}
+    m_Volume: 1
+    m_VolumeVariance: 0
+    m_Pitch: 1
+    m_PitchVariance: 0
+    m_Loop: 1
+    m_Music: 1
+    m_MixerGroup: {fileID: 0}
+    m_Source: {fileID: 0}
+  m_Settings: {fileID: 11400000, guid: 48b0a773072afa449b2270c16abac527, type: 2}
 --- !u!1 &1749161551
 GameObject:
   m_ObjectHideFlags: 0
@@ -1342,3 +1479,4 @@ SceneRoots:
   - {fileID: 661922899}
   - {fileID: 549902106}
   - {fileID: 1749161552}
+  - {fileID: 1607390353}
