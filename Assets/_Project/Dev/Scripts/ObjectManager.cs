@@ -2,45 +2,26 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-[Serializable]
-public class ObjectTypes
-{
-    public String Name;
-    public float Size;
-    public Sprite Sprite;
-    public int Score;
-}
-
 public class ObjectManager : MonoBehaviour
 {
     [SerializeField]
-    public int ObjectTypeIndex = 0;
+    private List<GameObject> itemPrefs = new List<GameObject>();
 
-    [SerializeField]
-    private List<ObjectTypes> objectTypes = new List<ObjectTypes>();
+    private int ObjectTypeIndex;
 
-    private SpriteRenderer spriteRenderer;
-    private CircleCollider2D circleCollider2D;
-
-    [SerializeField]
-    GameObject PlayerObject;
-
-    void Start()
+    private void Start()
     {
-        spriteRenderer = GetComponent<SpriteRenderer>();
-        circleCollider2D = GetComponent<CircleCollider2D>();
-    }
-
-    void Update()
-    {
-        transform.localScale = new Vector3(
-            objectTypes[ObjectTypeIndex].Size,
-            objectTypes[ObjectTypeIndex].Size,
-            1f
-        );
-
-        spriteRenderer.sprite = objectTypes[ObjectTypeIndex].Sprite;
-        circleCollider2D.radius = 0.09f;
+        // get index of item
+        foreach (GameObject _item in itemPrefs)
+        {
+            if (
+                _item.GetComponent<SpriteRenderer>().sprite
+                == gameObject.GetComponent<SpriteRenderer>().sprite
+            )
+            {
+                ObjectTypeIndex = itemPrefs.IndexOf(_item);
+            }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
@@ -59,9 +40,6 @@ public class ObjectManager : MonoBehaviour
         Destroy(collision.gameObject);
 
         // spawn one merged object
-        GameObject newObject = Instantiate(PlayerObject, middlePoint, Quaternion.identity);
-        newObject.GetComponent<ObjectManager>().ObjectTypeIndex = ObjectTypeIndex + 1;
-        newObject.GetComponent<CircleCollider2D>().enabled = true;
-        newObject.GetComponent<ObjectManager>().enabled = true;
+        Instantiate(itemPrefs[ObjectTypeIndex + 1], middlePoint, Quaternion.identity);
     }
 }
