@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 
     private void OnTap(InputAction.CallbackContext _context)
     {
-        if (!canDrag || currentBall == null)
+        if (!canDrag || currentBall == null || gameManager.GameOverMenu.activeInHierarchy)
             return;
 
         Vector2 _screenPos = positionAction.action.ReadValue<Vector2>();
