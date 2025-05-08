@@ -29,17 +29,33 @@ public class ObjectManager : MonoBehaviour
         ObjectManager other = collision.gameObject.GetComponent<ObjectManager>();
         if (other == null || other.ObjectTypeIndex != ObjectTypeIndex)
             return;
-        // ensure only one of the two runs the merge
-        if (this.GetInstanceID() > collision.gameObject.GetInstanceID())
-            return;
 
-        Vector2 middlePoint = Vector2.Lerp(transform.position, collision.transform.position, 0.5f);
+        if (ObjectTypeIndex == itemPrefs.Count - 1)
+        {
+            GameObject[] _peanutsArray = GameObject.FindGameObjectsWithTag("Peanut");
 
-        // destroy both originals
-        Destroy(gameObject);
-        Destroy(collision.gameObject);
+            foreach (GameObject _peanut in _peanutsArray)
+            {
+                Destroy(_peanut);
+            }
 
-        // spawn one merged object
-        Instantiate(itemPrefs[ObjectTypeIndex + 1], middlePoint, Quaternion.identity);
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+        }
+        else
+        {
+            // ensure only one of the two runs the merge
+            if (this.GetInstanceID() > collision.gameObject.GetInstanceID())
+                return;
+
+            Vector2 middlePoint = Vector2.Lerp(transform.position, collision.transform.position, 0.5f);
+
+            // destroy both originals
+            Destroy(gameObject);
+            Destroy(collision.gameObject);
+
+            // spawn one merged object
+            Instantiate(itemPrefs[ObjectTypeIndex + 1], middlePoint, Quaternion.identity);
+        }
     }
 }

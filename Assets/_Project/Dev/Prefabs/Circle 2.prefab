@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6376851209733011911}
   - component: {fileID: 3654789402548728732}
   - component: {fileID: 4192562416104018718}
+  - component: {fileID: 4210595249812117127}
   m_Layer: 6
   m_Name: Circle 2
   m_TagString: Untagged
@@ -163,6 +164,23 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 0.13, y: 0.13}
   m_EdgeRadius: 0
+--- !u!114 &4210595249812117127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7326690929729804124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7cb4b79cffd2a48961dbf4ee031578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefs:
+  - {fileID: 7326690929729804124, guid: bde77168776fb9340a3547614118487a, type: 3}
+  - {fileID: 7326690929729804124, guid: fc653ea4c940a3a46a155ab3cf600ec5, type: 3}
+  - {fileID: 7326690929729804124}
+  - {fileID: 7326690929729804124, guid: 46a16d5ba6bdde44e8c844a171488204, type: 3}
 --- !u!1001 &7778920512032926961
 PrefabInstance:
   m_ObjectHideFlags: 0
