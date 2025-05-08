@@ -40,7 +40,7 @@ public class AudioButtons : MonoBehaviour
     {
         if (musicButton != null)
         {
-            gameSettings.Audio = !gameSettings.Audio;
+            gameSettings.Music = !gameSettings.Music;
             UpdateButtonSprite(musicButton, gameSettings.Music);
 
             if (gameSettings.Music)
@@ -56,11 +56,11 @@ public class AudioButtons : MonoBehaviour
         }
     }
 
-    private void UpdateButtonSprite(Button button, bool isActive)
+    private void UpdateButtonSprite(Button _button, bool _isActive)
     {
-        if (button != null && images != null && images.Count >= 2)
+        if (_button != null && images != null && images.Count >= 2)
         {
-            button.image.sprite = isActive ? images[1] : images[0];
+            _button.image.sprite = _isActive ? images[1] : images[0];
         }
     }
 }
