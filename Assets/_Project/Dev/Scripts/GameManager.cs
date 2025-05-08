@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] GameObject nextDropDisplay;
     [SerializeField] GameObject[] dropPrefabs;
     [SerializeField] Player player;
-    [SerializeField] GameOver;
+    [SerializeField] GameObject GameOverMenu;
 
     [SerializeField] TextMeshProUGUI scoreText;
 
