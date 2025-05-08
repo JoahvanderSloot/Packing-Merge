@@ -12,20 +12,9 @@ public class UiManager : MonoBehaviour
         highScoreText.text = "High Score:\n" + gameSettings.HighScore.ToString();
     }
 
-    void Update()
-    {
-        
-    }
-
     public void StartGame()
     {
         //AudioManager.m_Instance.Play("Click");
         SceneManager.LoadScene("Main");
-    }
-
-    public void QuitGame()
-    {
-        //AudioManager.m_Instance.Play("Click");
-        Application.Quit();
     }
 }
