@@ -132,15 +132,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a34c0dc485065304abc265872e9d2160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  points:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  points: []
   movespeed: 3
   turnSpeed: 5
   DropPoint: {fileID: 575901726713603575}
-  peanutPrefab: {fileID: 0}
+  peanutPrefab: {fileID: 1911410492555839165, guid: c8ccc69d244be854b87de0aad3f4a5cb, type: 3}
   peanutDropSpeed: 0.1
+  peanutSprites:
+  - {fileID: 2712449135209075502, guid: 6d6b22b07704e414abe15f4547cb2fc7, type: 3}
+  - {fileID: 3733630435966996203, guid: 734ffd6a7c9f6bf409e7a45d0b9d9809, type: 3}
+  - {fileID: -9159237513042495052, guid: 0c09d72a78c42354088b474238b76443, type: 3}

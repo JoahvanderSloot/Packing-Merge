@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
 public class Gaylien : MonoBehaviour
 {
@@ -14,6 +16,8 @@ public class Gaylien : MonoBehaviour
 
     private Vector2 direction; // current movement direction
     private Vector2 desiredDirection; // next target direction
+
+    [SerializeField]
     private int pointIndex;
 
     [SerializeField]
@@ -25,16 +29,62 @@ public class Gaylien : MonoBehaviour
     [SerializeField]
     private float peanutDropSpeed = 1;
 
+    [SerializeField]
+    private List<Sprite> peanutSprites = new List<Sprite>();
+
+    [SerializeField]
+    private bool isreset = false;
+
+    Coroutine peanutDropCoroutine;
+
+    private GameManager gameManager;
+    private int currentScore = 0;
+
+    private int scoreGoal = 0;
+
+    [SerializeField]
+    private int scoreSpawn = 0;
+
     void Start()
     {
+        gameManager = FindFirstObjectByType<GameManager>();
+        scoreGoal = scoreSpawn;
+        pointIndex = points.Length - 1;
         transform.position = points[pointIndex].position;
         desiredDirection = (points[pointIndex].position - transform.position).normalized;
         direction = desiredDirection;
-        StartCoroutine(DropPeanut());
+        peanutDropCoroutine = StartCoroutine(DropPeanut());
     }
 
     void Update()
     {
+        currentScore = gameManager.GameSettings.Score;
+        if (currentScore >= scoreGoal)
+        {
+            scoreGoal += scoreSpawn;
+            pointIndex = 0;
+        }
+
+        if (pointIndex >= points.Length - 1)
+        {
+            if (isreset == false)
+            {
+                StopCoroutine(peanutDropCoroutine);
+                peanutDropCoroutine = null;
+                isreset = true;
+                transform.position = points[0].position;
+            }
+
+            return;
+        }
+        else
+        {
+            isreset = false;
+            if (peanutDropCoroutine == null)
+            {
+                peanutDropCoroutine = StartCoroutine(DropPeanut());
+            }
+        }
         float dist = Vector2.Distance(transform.position, points[pointIndex].position);
         if (dist < 0.1f)
         {
@@ -43,11 +93,6 @@ public class Gaylien : MonoBehaviour
         desiredDirection = (points[pointIndex].position - transform.position).normalized;
         direction = Vector2.Lerp(direction, desiredDirection, turnSpeed * Time.deltaTime);
         transform.position += (Vector3)(direction * movespeed * Time.deltaTime);
-
-        if (pointIndex >= points.Length - 1)
-        {
-            Destroy(gameObject);
-        }
     }
 
     IEnumerator DropPeanut()
@@ -55,7 +100,10 @@ public class Gaylien : MonoBehaviour
         while (true)
         {
             yield return new WaitForSeconds(peanutDropSpeed);
-            Instantiate(peanutPrefab, DropPoint.position, Quaternion.identity);
+            GameObject peanut = Instantiate(peanutPrefab, DropPoint.position, Quaternion.identity);
+            peanut.GetComponent<SpriteRenderer>().sprite = peanutSprites[
+                Random.Range(0, peanutSprites.Count)
+            ];
         }
     }
 }
