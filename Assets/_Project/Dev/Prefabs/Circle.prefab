@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2864610129700887013}
   - component: {fileID: 6376851209733011911}
   - component: {fileID: 3654789402548728732}
-  - component: {fileID: 4192562416104018718}
   - component: {fileID: -5834406136899995255}
+  - component: {fileID: 136242071062470250}
   m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 7326690929729804124}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0.185, y: -0.331, z: 0}
   m_LocalScale: {x: 4, y: 4, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: 6872660602229340564, guid: b8e7c36ad4dc43c43b46e0b4adfcf208, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,8 +118,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &4192562416104018718
-BoxCollider2D:
+--- !u!114 &-5834406136899995255
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7326690929729804124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7cb4b79cffd2a48961dbf4ee031578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefs:
+  - {fileID: 7326690929729804124}
+  - {fileID: 7326690929729804124, guid: fc653ea4c940a3a46a155ab3cf600ec5, type: 3}
+  - {fileID: 7326690929729804124, guid: 2321440e93201a14f891850f30c13c69, type: 3}
+  - {fileID: 7326690929729804124, guid: 46a16d5ba6bdde44e8c844a171488204, type: 3}
+  givesScore: 10
+  CanDie: 0
+--- !u!60 &136242071062470250
+PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -154,35 +173,42 @@ BoxCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
-    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.16, y: 0.16}
+    oldSize: {x: 0.33, y: 0.16}
     newSize: {x: 0.16, y: 0.16}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.13, y: 0.13}
-  m_EdgeRadius: 0
---- !u!114 &-5834406136899995255
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7326690929729804124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7cb4b79cffd2a48961dbf4ee031578, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemPrefs:
-  - {fileID: 7326690929729804124}
-  - {fileID: 7326690929729804124, guid: fc653ea4c940a3a46a155ab3cf600ec5, type: 3}
-  - {fileID: 7326690929729804124, guid: 2321440e93201a14f891850f30c13c69, type: 3}
-  - {fileID: 7326690929729804124, guid: 46a16d5ba6bdde44e8c844a171488204, type: 3}
-  givesScore: 10
-  CanDie: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.09393054, y: 0.050965533}
+      - {x: 0.055643756, y: 0.0610467}
+      - {x: 0.035402738, y: 0.08091477}
+      - {x: -0.05517302, y: 0.08077823}
+      - {x: -0.085066356, y: 0.07093752}
+      - {x: -0.08592487, y: 0.06091276}
+      - {x: -0.15535113, y: 0.06021553}
+      - {x: -0.16590503, y: 0.050737277}
+      - {x: -0.16616906, y: 0.019631267}
+      - {x: -0.15467238, y: 0.018307645}
+      - {x: -0.1556913, y: -0.040128596}
+      - {x: -0.14659765, y: -0.049228877}
+      - {x: -0.10515139, y: -0.070336126}
+      - {x: -0.07556766, y: -0.070400916}
+      - {x: -0.015690852, y: -0.07028111}
+      - {x: 0.054310545, y: -0.07016874}
+      - {x: 0.05482408, y: -0.08037489}
+      - {x: 0.08510674, y: -0.08064645}
+      - {x: 0.08564903, y: -0.070923455}
+      - {x: 0.13569842, y: -0.07043214}
+      - {x: 0.15553147, y: -0.05050341}
+      - {x: 0.16574556, y: -0.039707914}
+      - {x: 0.1646983, y: 0.009664487}
+      - {x: 0.14537838, y: 0.030150838}
+      - {x: 0.125, y: 0.040480245}
+  m_UseDelaunayMesh: 0
 --- !u!1001 &7243883828105363357
 PrefabInstance:
   m_ObjectHideFlags: 0

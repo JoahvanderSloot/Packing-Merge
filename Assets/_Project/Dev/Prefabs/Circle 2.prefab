@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 2864610129700887013}
   - component: {fileID: 6376851209733011911}
   - component: {fileID: 3654789402548728732}
-  - component: {fileID: 4192562416104018718}
   - component: {fileID: 4210595249812117127}
+  - component: {fileID: 9205795993594176418}
   m_Layer: 6
   m_Name: Circle 2
   m_TagString: Untagged
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 10915, guid: 0000000000000000f000000000000000, type: 0}
+  m_Sprite: {fileID: -5536751272912681457, guid: 9daa25757a0754a4891baa6363733023, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -118,8 +118,27 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &4192562416104018718
-BoxCollider2D:
+--- !u!114 &4210595249812117127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7326690929729804124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: de7cb4b79cffd2a48961dbf4ee031578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  itemPrefs:
+  - {fileID: 7326690929729804124, guid: bde77168776fb9340a3547614118487a, type: 3}
+  - {fileID: 7326690929729804124, guid: fc653ea4c940a3a46a155ab3cf600ec5, type: 3}
+  - {fileID: 7326690929729804124}
+  - {fileID: 7326690929729804124, guid: 46a16d5ba6bdde44e8c844a171488204, type: 3}
+  givesScore: 10
+  CanDie: 0
+--- !u!68 &9205795993594176418
+EdgeCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -153,36 +172,43 @@ BoxCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.2, y: 0.2}
-    newSize: {x: 0.16, y: 0.16}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.13, y: 0.13}
   m_EdgeRadius: 0
---- !u!114 &4210595249812117127
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7326690929729804124}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: de7cb4b79cffd2a48961dbf4ee031578, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  itemPrefs:
-  - {fileID: 7326690929729804124, guid: bde77168776fb9340a3547614118487a, type: 3}
-  - {fileID: 7326690929729804124, guid: fc653ea4c940a3a46a155ab3cf600ec5, type: 3}
-  - {fileID: 7326690929729804124}
-  - {fileID: 7326690929729804124, guid: 46a16d5ba6bdde44e8c844a171488204, type: 3}
-  givesScore: 10
-  CanDie: 0
+  m_Points:
+  - {x: -0.2, y: 0}
+  - {x: -0.2017055, y: 0.038442034}
+  - {x: -0.19146025, y: 0.06955776}
+  - {x: -0.18047558, y: 0.09968727}
+  - {x: -0.16659607, y: 0.113219105}
+  - {x: -0.15869792, y: 0.1332674}
+  - {x: -0.13995361, y: 0.15166609}
+  - {x: -0.101570874, y: 0.17901354}
+  - {x: -0.03809041, y: 0.20102914}
+  - {x: 0.03967163, y: 0.20015086}
+  - {x: 0.10134284, y: 0.17984182}
+  - {x: 0.12944627, y: 0.16032122}
+  - {x: 0.15333997, y: 0.13823813}
+  - {x: 0.17166144, y: 0.109066665}
+  - {x: 0.1819064, y: 0.09896945}
+  - {x: 0.19996028, y: 0.038616806}
+  - {x: 0.19926493, y: -0.038974196}
+  - {x: 0.18044186, y: -0.10261299}
+  - {x: 0.16023822, y: -0.13058597}
+  - {x: 0.14878559, y: -0.14162482}
+  - {x: 0.13060763, y: -0.16107674}
+  - {x: 0.100896664, y: -0.18061839}
+  - {x: 0.03984189, y: -0.20096578}
+  - {x: -0.040313646, y: -0.20194583}
+  - {x: -0.1002374, y: -0.18156295}
+  - {x: -0.12981968, y: -0.16201772}
+  - {x: -0.15009269, y: -0.14196754}
+  - {x: -0.16016905, y: -0.13186665}
+  - {x: -0.18127954, y: -0.09932463}
+  - {x: -0.20118146, y: -0.039388236}
+  - {x: -0.2003545, y: -0.0030445233}
+  m_AdjacentStartPoint: {x: 0, y: 0}
+  m_AdjacentEndPoint: {x: 0, y: 0}
+  m_UseAdjacentStartPoint: 0
+  m_UseAdjacentEndPoint: 0
 --- !u!1001 &7778920512032926961
 PrefabInstance:
   m_ObjectHideFlags: 0
