@@ -137,7 +137,7 @@ MonoBehaviour:
   - {fileID: 7326690929729804124, guid: 2321440e93201a14f891850f30c13c69, type: 3}
   - {fileID: 7326690929729804124, guid: 46a16d5ba6bdde44e8c844a171488204, type: 3}
   - {fileID: 7326690929729804124}
-  givesScore: 10
+  givesScore: 50
   CanDie: 0
 --- !u!60 &-1487682844265839485
 PolygonCollider2D:

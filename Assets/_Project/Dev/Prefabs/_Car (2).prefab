@@ -137,7 +137,7 @@ MonoBehaviour:
   - {fileID: 7326690929729804124, guid: 2321440e93201a14f891850f30c13c69, type: 3}
   - {fileID: 7326690929729804124, guid: 46a16d5ba6bdde44e8c844a171488204, type: 3}
   - {fileID: 7326690929729804124, guid: 784ee5e5d2399f441af51079e1c91f67, type: 3}
-  givesScore: 10
+  givesScore: 15
   CanDie: 0
 --- !u!60 &136242071062470250
 PolygonCollider2D:
@@ -233,7 +233,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9149695875266441437, guid: af10af36ec62ddf4e80b74997c09766b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.07
+      value: -0.075
       objectReference: {fileID: 0}
     - target: {fileID: 9149695875266441437, guid: af10af36ec62ddf4e80b74997c09766b, type: 3}
       propertyPath: m_LocalPosition.z
