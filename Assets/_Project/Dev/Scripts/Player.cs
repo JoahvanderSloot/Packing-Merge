@@ -44,7 +44,7 @@ public class Player : MonoBehaviour
 
     private void OnTap(InputAction.CallbackContext _context)
     {
-        if (!canDrag || currentBall == null || gameManager.GameOverMenu.activeInHierarchy)
+        if (!canDrag || currentBall == null || gameManager.GameOverMenu.activeSelf)
             return;
 
         Vector2 _screenPos = positionAction.action.ReadValue<Vector2>();
@@ -52,13 +52,14 @@ public class Player : MonoBehaviour
             new Vector3(_screenPos.x, _screenPos.y, 10f)
         );
 
-        currentBall.transform.position = new Vector3(_worldPos.x, startYpos, 0f);
+        float _clampedX = Mathf.Clamp(_worldPos.x, -2f, 2f);
+        currentBall.transform.position = new Vector3(_clampedX, startYpos, 0f);
         isDragging = true;
     }
 
     private void OnRelease(InputAction.CallbackContext _context)
     {
-        if (currentBall == null || isSpawning)
+        if (currentBall == null || isSpawning || gameManager.GameOverMenu.activeSelf)
             return;
 
         isDragging = false;
@@ -100,7 +101,8 @@ public class Player : MonoBehaviour
                 new Vector3(_screenPos.x, _screenPos.y, 10f)
             );
 
-            currentBall.transform.position = new Vector3(_worldPos.x, startYpos, 0f);
+            float _clampedX = Mathf.Clamp(_worldPos.x, -2f, 2f);
+            currentBall.transform.position = new Vector3(_clampedX, startYpos, 0f);
 
             if (currentLine != null)
             {
