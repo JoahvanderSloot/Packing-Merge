@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] Player player;
     public GameObject GameOverMenu;
 
+
     [SerializeField] TextMeshProUGUI scoreText;
 
     GameObject nextDrop;

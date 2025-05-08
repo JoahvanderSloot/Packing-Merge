@@ -4,7 +4,7 @@ public class Killbox : MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
 
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerStay2D(Collider2D collision)
     {
         ObjectManager _obj = collision.gameObject.GetComponent<ObjectManager>();
         if (_obj != null)
