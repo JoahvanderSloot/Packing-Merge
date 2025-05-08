@@ -4,6 +4,7 @@ using UnityEngine;
 public class GameSettings : ScriptableObject
 {
     public int HighScore;
+    public int Score;
     public bool Audio;
     public bool Music;
 }

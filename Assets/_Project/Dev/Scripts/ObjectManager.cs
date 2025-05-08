@@ -7,7 +7,10 @@ public class ObjectManager : MonoBehaviour
     [SerializeField]
     private List<GameObject> itemPrefs = new List<GameObject>();
 
+    [SerializeField] int givesScore;
+
     private int ObjectTypeIndex;
+    public bool CanDie = false;
 
     private void Start()
     {
@@ -26,9 +29,17 @@ public class ObjectManager : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
+        if(collision.gameObject.layer == LayerMask.NameToLayer("LineHit"))
+        {
+            CanDie = true;
+        }
+
         ObjectManager other = collision.gameObject.GetComponent<ObjectManager>();
         if (other == null || other.ObjectTypeIndex != ObjectTypeIndex)
             return;
+
+        Destroy(gameObject);
+        Destroy(collision.gameObject);
 
         if (ObjectTypeIndex == itemPrefs.Count - 1)
         {
@@ -38,9 +49,6 @@ public class ObjectManager : MonoBehaviour
             {
                 Destroy(_peanut);
             }
-
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
         }
         else
         {
@@ -50,12 +58,11 @@ public class ObjectManager : MonoBehaviour
 
             Vector2 middlePoint = Vector2.Lerp(transform.position, collision.transform.position, 0.5f);
 
-            // destroy both originals
-            Destroy(gameObject);
-            Destroy(collision.gameObject);
-
             // spawn one merged object
-            Instantiate(itemPrefs[ObjectTypeIndex + 1], middlePoint, Quaternion.identity);
+            GameObject _newBall = Instantiate(itemPrefs[ObjectTypeIndex + 1], middlePoint, Quaternion.identity);
+            _newBall.GetComponent<Rigidbody2D>().gravityScale = 1f;
         }
+        GameManager _gameManager = FindFirstObjectByType<GameManager>();
+        _gameManager.GameSettings.Score += givesScore;
     }
 }
