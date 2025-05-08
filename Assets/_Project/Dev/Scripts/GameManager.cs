@@ -19,6 +19,10 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
+        if (AudioManager.Instance.IsPlaying("Lose"))
+        {
+            AudioManager.Instance.Stop("Lose");
+        }
         AudioManager.Instance.Play("GameMusic");
         Settings.Score = 0;
         GameOverMenu.SetActive(false);
@@ -60,6 +64,16 @@ public class GameManager : MonoBehaviour
             Settings.HighScore = Settings.Score;
         }
         Settings.Score = 0;
+
+        if (AudioManager.Instance.IsPlaying("GameMusic"))
+        {
+            AudioManager.Instance.Stop("GameMusic");
+        }
+        if (AudioManager.Instance.IsPlaying("Lose"))
+        {
+            AudioManager.Instance.Stop("Lose");
+        }
+
         SceneManager.LoadScene("Start");
     }
 
@@ -71,7 +85,10 @@ public class GameManager : MonoBehaviour
 
     public void GameOver()
     {
-        AudioManager.Instance.Play("Lose");
+        if (AudioManager.Instance.IsPlaying("GameMusic"))
+        {
+            AudioManager.Instance.Stop("GameMusic");
+        }
         GameOverMenu.SetActive(true);
 
         if (Settings.Score > Settings.HighScore)

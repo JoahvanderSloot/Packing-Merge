@@ -3,6 +3,7 @@ using UnityEngine;
 public class Killbox : MonoBehaviour
 {
     [SerializeField] GameManager gameManager;
+    bool soundPlayed = false;
 
     private void OnTriggerStay2D(Collider2D collision)
     {
@@ -11,6 +12,11 @@ public class Killbox : MonoBehaviour
         {
             if (_obj.CanDie)
             {
+                if (!soundPlayed)
+                {
+                    AudioManager.Instance.Play("Lose");
+                    soundPlayed = true;
+                }
                 gameManager.GameOver();
             }
         }

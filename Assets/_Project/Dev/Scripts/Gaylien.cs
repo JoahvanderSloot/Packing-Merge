@@ -86,6 +86,7 @@ public class Gaylien : MonoBehaviour
             if (peanutDropCoroutine == null)
             {
                 peanutDropCoroutine = StartCoroutine(DropPeanut());
+                AudioManager.Instance.Play("Gaylien");
             }
         }
         float dist = Vector2.Distance(transform.position, points[pointIndex].position);
@@ -97,7 +98,7 @@ public class Gaylien : MonoBehaviour
         direction = Vector2.Lerp(direction, desiredDirection, turnSpeed * Time.deltaTime);
         transform.position += (Vector3)(direction * movespeed * Time.deltaTime);
 
-        if(pointIndex == 1 && !saidHello)
+        if(pointIndex == 3 && !saidHello)
         {
             AudioManager.Instance.Play("Hello");
             saidHello = true;
@@ -110,7 +111,6 @@ public class Gaylien : MonoBehaviour
 
     IEnumerator DropPeanut()
     {
-        AudioManager.Instance.Play("Gaylien");
         while (true)
         {
             yield return new WaitForSeconds(peanutDropSpeed);
