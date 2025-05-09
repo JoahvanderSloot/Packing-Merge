@@ -5,6 +5,7 @@ TagManager:
   serializedVersion: 3
   tags:
   - Peanut
+  - Floor
   layers:
   - Default
   - TransparentFX

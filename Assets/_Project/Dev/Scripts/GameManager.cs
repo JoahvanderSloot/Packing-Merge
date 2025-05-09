@@ -16,6 +16,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI scoreText;
 
     GameObject nextDrop;
+    int nextDropIndex = -1;
 
     private void Start()
     {
@@ -36,8 +37,21 @@ public class GameManager : MonoBehaviour
 
     private void ChooseRandomDrop()
     {
-        int _randomIndex = Random.Range(0, dropPrefabs.Length);
-        nextDrop = dropPrefabs[_randomIndex];
+        if (nextDropIndex == -1)
+        {
+            nextDropIndex = 0;
+        }
+        else
+        {
+            int _randomIndex = Random.Range(1, dropPrefabs.Length);
+            if (_randomIndex == nextDropIndex)
+            {
+                _randomIndex = 0;
+            }
+            nextDropIndex = _randomIndex;
+        }
+
+        nextDrop = dropPrefabs[nextDropIndex];
 
         if (nextDropDisplay != null)
         {
@@ -95,6 +109,5 @@ public class GameManager : MonoBehaviour
         {
             Settings.HighScore = Settings.Score;
         }
-        Settings.Score = 0;
     }
 }
