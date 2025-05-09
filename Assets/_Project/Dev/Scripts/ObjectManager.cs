@@ -29,9 +29,27 @@ public class ObjectManager : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.layer == LayerMask.NameToLayer("LineHit"))
+        if(collision.gameObject.CompareTag("Floor"))
         {
             CanDie = true;
+        }
+        else if (collision.gameObject.CompareTag("Peanut"))
+        {
+            if(collision.gameObject.GetComponent<Peanut>().CanKill)
+            {
+                CanDie = true;
+            }
+        }
+        else if(collision.gameObject.layer == LayerMask.NameToLayer("LineHit"))
+        {
+
+            if (collision.gameObject.GetComponent<ObjectManager>() != null)
+            {
+                if (collision.gameObject.GetComponent<ObjectManager>().CanDie)
+                {
+                    CanDie = true;
+                }
+            }
         }
 
         ObjectManager other = collision.gameObject.GetComponent<ObjectManager>();
